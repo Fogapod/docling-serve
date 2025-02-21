@@ -56,8 +56,8 @@ cpu = [
   "torchvision>=0.21.0",
 ]
 cu124 = [
-  "torch>=2.6.0",
-  "torchvision>=0.21.0",
+  "torch>=2.5.1",
+  "torchvision>=0.20.1",
 ]
 
 [dependency-groups]
