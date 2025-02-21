@@ -484,11 +484,11 @@ dependencies = [
     { name = "torch", version = "2.4.1", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "torch", version = "2.6.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine == 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "torch", version = "2.6.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'x86_64' and extra == 'extra-13-docling-serve-cpu') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and extra == 'extra-13-docling-serve-cpu')" },
-    { name = "torch", version = "2.7.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
     { name = "torchvision", version = "0.19.1", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "torchvision", version = "0.21.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "torchvision", version = "0.21.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "torchvision", version = "0.22.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "torchvision", version = "0.21.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
     { name = "tqdm" },
     { name = "transformers" },
 ]
@@ -556,8 +556,8 @@ cpu = [
     { name = "torchvision", version = "0.21.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
 ]
 cu124 = [
-    { name = "torch", version = "2.7.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" } },
-    { name = "torchvision", version = "0.22.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" } },
+    { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" } },
+    { name = "torchvision", version = "0.21.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" } },
 ]
 rapidocr = [
     { name = "onnxruntime" },
@@ -594,9 +594,9 @@ requires-dist = [
     { name = "rapidocr-onnxruntime", marker = "python_full_version < '3.13' and extra == 'rapidocr'", specifier = "~=1.4" },
     { name = "tesserocr", marker = "extra == 'tesserocr'", specifier = "~=2.7" },
     { name = "torch", marker = "extra == 'cpu'", specifier = ">=2.6.0", index = "https://download.pytorch.org/whl/cpu", conflict = { package = "docling-serve", extra = "cpu" } },
-    { name = "torch", marker = "extra == 'cu124'", specifier = ">=2.6.0", index = "https://download.pytorch.org/whl/nightly/cu128", conflict = { package = "docling-serve", extra = "cu124" } },
+    { name = "torch", marker = "extra == 'cu124'", specifier = ">=2.6.0", index = "https://download.pytorch.org/whl/cu124", conflict = { package = "docling-serve", extra = "cu124" } },
     { name = "torchvision", marker = "extra == 'cpu'", specifier = ">=0.21.0", index = "https://download.pytorch.org/whl/cpu", conflict = { package = "docling-serve", extra = "cpu" } },
-    { name = "torchvision", marker = "extra == 'cu124'", specifier = ">=0.21.0", index = "https://download.pytorch.org/whl/nightly/cu128", conflict = { package = "docling-serve", extra = "cu124" } },
+    { name = "torchvision", marker = "extra == 'cu124'", specifier = ">=0.21.0", index = "https://download.pytorch.org/whl/cu124", conflict = { package = "docling-serve", extra = "cu124" } },
     { name = "typer", specifier = "~=0.12" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.29.0,<1.0.0" },
 ]
@@ -649,11 +649,11 @@ dependencies = [
     { name = "torch", version = "2.4.1", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "torch", version = "2.6.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine == 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "torch", version = "2.6.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'x86_64' and extra == 'extra-13-docling-serve-cpu') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and extra == 'extra-13-docling-serve-cpu')" },
-    { name = "torch", version = "2.7.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
     { name = "torchvision", version = "0.19.1", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "torchvision", version = "0.21.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine == 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "torchvision", version = "0.21.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "torchvision", version = "0.22.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "torchvision", version = "0.21.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/bb/84/4a2cab0e6adde6a85e7ba543862e5fc0250c51f3ac721a078a55cdcff250/easyocr-1.7.2-py3-none-any.whl", hash = "sha256:5be12f9b0e595d443c9c3d10b0542074b50f0ec2d98b141a109cd961fd1c177c", size = 2870178 },
@@ -1528,36 +1528,124 @@ wheels = [
 name = "nvidia-cublas-cu12"
 version = "12.1.3.1"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/37/6d/121efd7382d5b0284239f4ab1fc1590d86d34ed4a4a2fdb13b30ca8e5740/nvidia_cublas_cu12-12.1.3.1-py3-none-manylinux1_x86_64.whl", hash = "sha256:ee53ccca76a6fc08fb9701aa95b6ceb242cdaab118c3bb152af4e579af792728", size = 410594774 },
     { url = "https://files.pythonhosted.org/packages/c5/ef/32a375b74bea706c93deea5613552f7c9104f961b21df423f5887eca713b/nvidia_cublas_cu12-12.1.3.1-py3-none-win_amd64.whl", hash = "sha256:2b964d60e8cf11b5e1073d179d85fa340c120e99b3067558f3cf98dd69d02906", size = 439918445 },
 ]
 
 [[package]]
+name = "nvidia-cublas-cu12"
+version = "12.4.5.8"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/7f/7fbae15a3982dc9595e49ce0f19332423b260045d0a6afe93cdbe2f1f624/nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_aarch64.whl", hash = "sha256:0f8aa1706812e00b9f19dfe0cdb3999b092ccb8ca168c0db5b8ea712456fd9b3", size = 363333771 },
+    { url = "https://files.pythonhosted.org/packages/ae/71/1c91302526c45ab494c23f61c7a84aa568b8c1f9d196efa5993957faf906/nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl", hash = "sha256:2fc8da60df463fdefa81e323eef2e36489e1c94335b5358bcb38360adf75ac9b", size = 363438805 },
+    { url = "https://files.pythonhosted.org/packages/e2/2a/4f27ca96232e8b5269074a72e03b4e0d43aa68c9b965058b1684d07c6ff8/nvidia_cublas_cu12-12.4.5.8-py3-none-win_amd64.whl", hash = "sha256:5a796786da89203a0657eda402bcdcec6180254a8ac22d72213abc42069522dc", size = 396895858 },
+]
+
+[[package]]
 name = "nvidia-cuda-cupti-cu12"
 version = "12.1.105"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7e/00/6b218edd739ecfc60524e585ba8e6b00554dd908de2c9c66c1af3e44e18d/nvidia_cuda_cupti_cu12-12.1.105-py3-none-manylinux1_x86_64.whl", hash = "sha256:e54fde3983165c624cb79254ae9818a456eb6e87a7fd4d56a2352c24ee542d7e", size = 14109015 },
     { url = "https://files.pythonhosted.org/packages/d0/56/0021e32ea2848c24242f6b56790bd0ccc8bf99f973ca790569c6ca028107/nvidia_cuda_cupti_cu12-12.1.105-py3-none-win_amd64.whl", hash = "sha256:bea8236d13a0ac7190bd2919c3e8e6ce1e402104276e6f9694479e48bb0eb2a4", size = 10154340 },
 ]
 
 [[package]]
+name = "nvidia-cuda-cupti-cu12"
+version = "12.4.127"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/93/b5/9fb3d00386d3361b03874246190dfec7b206fd74e6e287b26a8fcb359d95/nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_aarch64.whl", hash = "sha256:79279b35cf6f91da114182a5ce1864997fd52294a87a16179ce275773799458a", size = 12354556 },
+    { url = "https://files.pythonhosted.org/packages/67/42/f4f60238e8194a3106d06a058d494b18e006c10bb2b915655bd9f6ea4cb1/nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl", hash = "sha256:9dec60f5ac126f7bb551c055072b69d85392b13311fcc1bcda2202d172df30fb", size = 13813957 },
+    { url = "https://files.pythonhosted.org/packages/f3/79/8cf313ec17c58ccebc965568e5bcb265cdab0a1df99c4e674bb7a3b99bfe/nvidia_cuda_cupti_cu12-12.4.127-py3-none-win_amd64.whl", hash = "sha256:5688d203301ab051449a2b1cb6690fbe90d2b372f411521c86018b950f3d7922", size = 9938035 },
+]
+
+[[package]]
 name = "nvidia-cuda-nvrtc-cu12"
 version = "12.1.105"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b6/9f/c64c03f49d6fbc56196664d05dba14e3a561038a81a638eeb47f4d4cfd48/nvidia_cuda_nvrtc_cu12-12.1.105-py3-none-manylinux1_x86_64.whl", hash = "sha256:339b385f50c309763ca65456ec75e17bbefcbbf2893f462cb8b90584cd27a1c2", size = 23671734 },
     { url = "https://files.pythonhosted.org/packages/ad/1d/f76987c4f454eb86e0b9a0e4f57c3bf1ac1d13ad13cd1a4da4eb0e0c0ce9/nvidia_cuda_nvrtc_cu12-12.1.105-py3-none-win_amd64.whl", hash = "sha256:0a98a522d9ff138b96c010a65e145dc1b4850e9ecb75a0172371793752fd46ed", size = 19331863 },
 ]
 
 [[package]]
+name = "nvidia-cuda-nvrtc-cu12"
+version = "12.4.127"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/77/aa/083b01c427e963ad0b314040565ea396f914349914c298556484f799e61b/nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_aarch64.whl", hash = "sha256:0eedf14185e04b76aa05b1fea04133e59f465b6f960c0cbf4e37c3cb6b0ea198", size = 24133372 },
+    { url = "https://files.pythonhosted.org/packages/2c/14/91ae57cd4db3f9ef7aa99f4019cfa8d54cb4caa7e00975df6467e9725a9f/nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl", hash = "sha256:a178759ebb095827bd30ef56598ec182b85547f1508941a3d560eb7ea1fbf338", size = 24640306 },
+    { url = "https://files.pythonhosted.org/packages/7c/30/8c844bfb770f045bcd8b2c83455c5afb45983e1a8abf0c4e5297b481b6a5/nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-win_amd64.whl", hash = "sha256:a961b2f1d5f17b14867c619ceb99ef6fcec12e46612711bcec78eb05068a60ec", size = 19751955 },
+]
+
+[[package]]
 name = "nvidia-cuda-runtime-cu12"
 version = "12.1.105"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/d5/c68b1d2cdfcc59e72e8a5949a37ddb22ae6cade80cd4a57a84d4c8b55472/nvidia_cuda_runtime_cu12-12.1.105-py3-none-manylinux1_x86_64.whl", hash = "sha256:6e258468ddf5796e25f1dc591a31029fa317d97a0a94ed93468fc86301d61e40", size = 823596 },
     { url = "https://files.pythonhosted.org/packages/9f/e2/7a2b4b5064af56ea8ea2d8b2776c0f2960d95c88716138806121ae52a9c9/nvidia_cuda_runtime_cu12-12.1.105-py3-none-win_amd64.whl", hash = "sha256:dfb46ef84d73fababab44cf03e3b83f80700d27ca300e537f85f636fac474344", size = 821226 },
+]
+
+[[package]]
+name = "nvidia-cuda-runtime-cu12"
+version = "12.4.127"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a1/aa/b656d755f474e2084971e9a297def515938d56b466ab39624012070cb773/nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_aarch64.whl", hash = "sha256:961fe0e2e716a2a1d967aab7caee97512f71767f852f67432d572e36cb3a11f3", size = 894177 },
+    { url = "https://files.pythonhosted.org/packages/ea/27/1795d86fe88ef397885f2e580ac37628ed058a92ed2c39dc8eac3adf0619/nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl", hash = "sha256:64403288fa2136ee8e467cdc9c9427e0434110899d07c779f25b5c068934faa5", size = 883737 },
+    { url = "https://files.pythonhosted.org/packages/a8/8b/450e93fab75d85a69b50ea2d5fdd4ff44541e0138db16f9cd90123ef4de4/nvidia_cuda_runtime_cu12-12.4.127-py3-none-win_amd64.whl", hash = "sha256:09c2e35f48359752dfa822c09918211844a3d93c100a715d79b59591130c5e1e", size = 878808 },
 ]
 
 [[package]]
@@ -1565,7 +1653,8 @@ name = "nvidia-cudnn-cu12"
 version = "9.1.0.70"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cublas-cu12", version = "12.1.3.1", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cublas-cu12", version = "12.4.5.8", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9f/fd/713452cd72343f682b1c7b9321e23829f00b842ceaedcda96e742ea0b0b3/nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl", hash = "sha256:165764f44ef8c61fcdfdfdbe769d687e06374059fbb388b6c89ecb0e28793a6f", size = 664752741 },
@@ -1576,27 +1665,80 @@ wheels = [
 name = "nvidia-cufft-cu12"
 version = "11.0.2.54"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/86/94/eb540db023ce1d162e7bea9f8f5aa781d57c65aed513c33ee9a5123ead4d/nvidia_cufft_cu12-11.0.2.54-py3-none-manylinux1_x86_64.whl", hash = "sha256:794e3948a1aa71fd817c3775866943936774d1c14e7628c74f6f7417224cdf56", size = 121635161 },
     { url = "https://files.pythonhosted.org/packages/f7/57/7927a3aa0e19927dfed30256d1c854caf991655d847a4e7c01fe87e3d4ac/nvidia_cufft_cu12-11.0.2.54-py3-none-win_amd64.whl", hash = "sha256:d9ac353f78ff89951da4af698f80870b1534ed69993f10a4cf1d96f21357e253", size = 121344196 },
 ]
 
 [[package]]
+name = "nvidia-cufft-cu12"
+version = "11.2.1.3"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+dependencies = [
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7a/8a/0e728f749baca3fbeffad762738276e5df60851958be7783af121a7221e7/nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_aarch64.whl", hash = "sha256:5dad8008fc7f92f5ddfa2101430917ce2ffacd86824914c82e28990ad7f00399", size = 211422548 },
+    { url = "https://files.pythonhosted.org/packages/27/94/3266821f65b92b3138631e9c8e7fe1fb513804ac934485a8d05776e1dd43/nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl", hash = "sha256:f083fc24912aa410be21fa16d157fed2055dab1cc4b6934a0e03cba69eb242b9", size = 211459117 },
+    { url = "https://files.pythonhosted.org/packages/f6/ee/3f3f8e9874f0be5bbba8fb4b62b3de050156d159f8b6edc42d6f1074113b/nvidia_cufft_cu12-11.2.1.3-py3-none-win_amd64.whl", hash = "sha256:d802f4954291101186078ccbe22fc285a902136f974d369540fd4a5333d1440b", size = 210576476 },
+]
+
+[[package]]
 name = "nvidia-curand-cu12"
 version = "10.3.2.106"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/44/31/4890b1c9abc496303412947fc7dcea3d14861720642b49e8ceed89636705/nvidia_curand_cu12-10.3.2.106-py3-none-manylinux1_x86_64.whl", hash = "sha256:9d264c5036dde4e64f1de8c50ae753237c12e0b1348738169cd0f8a536c0e1e0", size = 56467784 },
     { url = "https://files.pythonhosted.org/packages/5c/97/4c9c7c79efcdf5b70374241d48cf03b94ef6707fd18ea0c0f53684931d0b/nvidia_curand_cu12-10.3.2.106-py3-none-win_amd64.whl", hash = "sha256:75b6b0c574c0037839121317e17fd01f8a69fd2ef8e25853d826fec30bdba74a", size = 55995813 },
 ]
 
 [[package]]
+name = "nvidia-curand-cu12"
+version = "10.3.5.147"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/80/9c/a79180e4d70995fdf030c6946991d0171555c6edf95c265c6b2bf7011112/nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_aarch64.whl", hash = "sha256:1f173f09e3e3c76ab084aba0de819c49e56614feae5c12f69883f4ae9bb5fad9", size = 56314811 },
+    { url = "https://files.pythonhosted.org/packages/8a/6d/44ad094874c6f1b9c654f8ed939590bdc408349f137f9b98a3a23ccec411/nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl", hash = "sha256:a88f583d4e0bb643c49743469964103aa59f7f708d862c3ddb0fc07f851e3b8b", size = 56305206 },
+    { url = "https://files.pythonhosted.org/packages/1c/22/2573503d0d4e45673c263a313f79410e110eb562636b0617856fdb2ff5f6/nvidia_curand_cu12-10.3.5.147-py3-none-win_amd64.whl", hash = "sha256:f307cc191f96efe9e8f05a87096abc20d08845a841889ef78cb06924437f6771", size = 55799918 },
+]
+
+[[package]]
 name = "nvidia-cusolver-cu12"
 version = "11.4.5.107"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 dependencies = [
-    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cusparse-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cublas-cu12", version = "12.1.3.1", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusparse-cu12", version = "12.1.0.106", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
 ]
 wheels = [
@@ -1605,9 +1747,36 @@ wheels = [
 ]
 
 [[package]]
+name = "nvidia-cusolver-cu12"
+version = "11.6.1.9"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+dependencies = [
+    { name = "nvidia-cublas-cu12", version = "12.4.5.8", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusparse-cu12", version = "12.3.1.170", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/46/6b/a5c33cf16af09166845345275c34ad2190944bcc6026797a39f8e0a282e0/nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_aarch64.whl", hash = "sha256:d338f155f174f90724bbde3758b7ac375a70ce8e706d70b018dd3375545fc84e", size = 127634111 },
+    { url = "https://files.pythonhosted.org/packages/3a/e1/5b9089a4b2a4790dfdea8b3a006052cfecff58139d5a4e34cb1a51df8d6f/nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl", hash = "sha256:19e33fa442bcfd085b3086c4ebf7e8debc07cfe01e11513cc6d332fd918ac260", size = 127936057 },
+    { url = "https://files.pythonhosted.org/packages/f2/be/d435b7b020e854d5d5a682eb5de4328fd62f6182507406f2818280e206e2/nvidia_cusolver_cu12-11.6.1.9-py3-none-win_amd64.whl", hash = "sha256:e77314c9d7b694fcebc84f58989f3aa4fb4cb442f12ca1a9bde50f5e8f6d1b9c", size = 125224015 },
+]
+
+[[package]]
 name = "nvidia-cusparse-cu12"
 version = "12.1.0.106"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 dependencies = [
     { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
 ]
@@ -1617,12 +1786,61 @@ wheels = [
 ]
 
 [[package]]
+name = "nvidia-cusparse-cu12"
+version = "12.3.1.170"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+dependencies = [
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and sys_platform != 'linux' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform == 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/96/a9/c0d2f83a53d40a4a41be14cea6a0bf9e668ffcf8b004bd65633f433050c0/nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_aarch64.whl", hash = "sha256:9d32f62896231ebe0480efd8a7f702e143c98cfaa0e8a76df3386c1ba2b54df3", size = 207381987 },
+    { url = "https://files.pythonhosted.org/packages/db/f7/97a9ea26ed4bbbfc2d470994b8b4f338ef663be97b8f677519ac195e113d/nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl", hash = "sha256:ea4f11a2904e2a8dc4b1833cc1b5181cde564edd0d5cd33e3c168eff2d1863f1", size = 207454763 },
+    { url = "https://files.pythonhosted.org/packages/a2/e0/3155ca539760a8118ec94cc279b34293309bcd14011fc724f87f31988843/nvidia_cusparse_cu12-12.3.1.170-py3-none-win_amd64.whl", hash = "sha256:9bc90fb087bc7b4c15641521f31c0371e9a612fc2ba12c338d3ae032e6b6797f", size = 204684315 },
+]
+
+[[package]]
+name = "nvidia-cusparselt-cu12"
+version = "0.6.2"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/98/8e/675498726c605c9441cf46653bd29cb1b8666da1fb1469ffa25f67f20c58/nvidia_cusparselt_cu12-0.6.2-py3-none-manylinux2014_aarch64.whl", hash = "sha256:067a7f6d03ea0d4841c85f0c6f1991c5dda98211f6302cb83a4ab234ee95bef8", size = 149422781 },
+    { url = "https://files.pythonhosted.org/packages/78/a8/bcbb63b53a4b1234feeafb65544ee55495e1bb37ec31b999b963cbccfd1d/nvidia_cusparselt_cu12-0.6.2-py3-none-manylinux2014_x86_64.whl", hash = "sha256:df2c24502fd76ebafe7457dbc4716b2fec071aabaed4fb7691a201cde03704d9", size = 150057751 },
+    { url = "https://files.pythonhosted.org/packages/56/8f/2c33082238b6c5e783a877dc8786ab62619e3e6171c083bd3bba6e3fe75e/nvidia_cusparselt_cu12-0.6.2-py3-none-win_amd64.whl", hash = "sha256:0057c91d230703924c0422feabe4ce768841f9b4b44d28586b6f6d2eb86fbe70", size = 148755794 },
+]
+
+[[package]]
 name = "nvidia-nccl-cu12"
 version = "2.20.5"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c1/bb/d09dda47c881f9ff504afd6f9ca4f502ded6d8fc2f572cacc5e39da91c28/nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_aarch64.whl", hash = "sha256:1fc150d5c3250b170b29410ba682384b14581db722b2531b0d8d33c595f33d01", size = 176238458 },
     { url = "https://files.pythonhosted.org/packages/4b/2a/0a131f572aa09f741c30ccd45a8e56316e8be8dfc7bc19bf0ab7cfef7b19/nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_x86_64.whl", hash = "sha256:057f6bf9685f75215d0c53bf3ac4a10b3e6578351de307abad9e18a99182af56", size = 176249402 },
+]
+
+[[package]]
+name = "nvidia-nccl-cu12"
+version = "2.21.5"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/df/99/12cd266d6233f47d00daf3a72739872bdc10267d0383508b0b9c84a18bb6/nvidia_nccl_cu12-2.21.5-py3-none-manylinux2014_x86_64.whl", hash = "sha256:8579076d30a8c24988834445f8d633c697d42397e92ffc3f63fa26766d25e0a0", size = 188654414 },
 ]
 
 [[package]]
@@ -1639,9 +1857,31 @@ wheels = [
 name = "nvidia-nvtx-cu12"
 version = "12.1.105"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/da/d3/8057f0587683ed2fcd4dbfbdfdfa807b9160b809976099d36b8f60d08f03/nvidia_nvtx_cu12-12.1.105-py3-none-manylinux1_x86_64.whl", hash = "sha256:dc21cf308ca5691e7c04d962e213f8a4aa9bbfa23d95412f452254c2caeb09e5", size = 99138 },
     { url = "https://files.pythonhosted.org/packages/b8/d7/bd7cb2d95ac6ac6e8d05bfa96cdce69619f1ef2808e072919044c2d47a8c/nvidia_nvtx_cu12-12.1.105-py3-none-win_amd64.whl", hash = "sha256:65f4d98982b31b60026e0e6de73fbdfc09d08a96f4656dd3665ca616a11e1e82", size = 66307 },
+]
+
+[[package]]
+name = "nvidia-nvtx-cu12"
+version = "12.4.127"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/06/39/471f581edbb7804b39e8063d92fc8305bdc7a80ae5c07dbe6ea5c50d14a5/nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_aarch64.whl", hash = "sha256:7959ad635db13edf4fc65c06a6e9f9e55fc2f92596db928d169c0bb031e88ef3", size = 100417 },
+    { url = "https://files.pythonhosted.org/packages/87/20/199b8713428322a2f22b722c62b8cc278cc53dffa9705d744484b5035ee9/nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl", hash = "sha256:781e950d9b9f60d8241ccea575b32f5105a5baf4c2351cab5256a24869f12a1a", size = 99144 },
+    { url = "https://files.pythonhosted.org/packages/54/1b/f77674fbb73af98843be25803bbd3b9a4f0a96c75b8d33a2854a5c7d2d77/nvidia_nvtx_cu12-12.4.127-py3-none-win_amd64.whl", hash = "sha256:641dccaaa1139f3ffb0d3164b4b84f9d253397e38246a4f2f36728b48566d485", size = 66307 },
 ]
 
 [[package]]
@@ -1654,8 +1894,8 @@ dependencies = [
     { name = "numpy" },
     { name = "packaging" },
     { name = "protobuf" },
-    { name = "sympy", version = "1.13.1", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-13-docling-serve-cpu'" },
-    { name = "sympy", version = "1.13.3", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-13-docling-serve-cu124' or extra != 'extra-13-docling-serve-cpu'" },
+    { name = "sympy", version = "1.13.1", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-13-docling-serve-cpu' or extra == 'extra-13-docling-serve-cu124'" },
+    { name = "sympy", version = "1.13.3", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4e/28/99f903b0eb1cd6f3faa0e343217d9fb9f47b84bca98bd9859884631336ee/onnxruntime-1.20.1-cp310-cp310-macosx_13_0_universal2.whl", hash = "sha256:e50ba5ff7fed4f7d9253a6baf801ca2883cc08491f9d32d78a80da57256a5439", size = 30996314 },
@@ -2798,7 +3038,7 @@ torch = [
     { name = "torch", version = "2.4.1", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "torch", version = "2.6.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'x86_64' and sys_platform == 'darwin' and extra == 'extra-13-docling-serve-cpu') or (platform_machine == 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "torch", version = "2.6.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'x86_64' and extra == 'extra-13-docling-serve-cpu') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'darwin' and extra == 'extra-13-docling-serve-cpu')" },
-    { name = "torch", version = "2.7.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
 ]
 
 [[package]]
@@ -3063,7 +3303,7 @@ resolution-markers = [
     "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
 ]
 dependencies = [
-    { name = "mpmath", marker = "extra == 'extra-13-docling-serve-cpu'" },
+    { name = "mpmath", marker = "extra == 'extra-13-docling-serve-cpu' or extra == 'extra-13-docling-serve-cu124'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ca/99/5a5b6f19ff9f083671ddf7b9632028436167cd3d33e11015754e41b249a4/sympy-1.13.1.tar.gz", hash = "sha256:9cebf7e04ff162015ce31c9c6c9144daa34a93bd082f54fd8f12deca4f47515f", size = 7533040 }
 wheels = [
@@ -3093,7 +3333,7 @@ resolution-markers = [
     "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
 ]
 dependencies = [
-    { name = "mpmath" },
+    { name = "mpmath", marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/11/8a/5a7fd6284fa8caac23a26c9ddf9c30485a48169344b4bd3b0f02fef1890f/sympy-1.13.3.tar.gz", hash = "sha256:b27fd2c6530e0ab39e275fc9b683895367e51d5da91baa8d3d64db2565fec4d9", size = 7533196 }
 wheels = [
@@ -3278,19 +3518,19 @@ dependencies = [
     { name = "fsspec", marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "jinja2", marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
     { name = "networkx", marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cublas-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cuda-cupti-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cuda-nvrtc-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cuda-runtime-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cublas-cu12", version = "12.1.3.1", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cuda-cupti-cu12", version = "12.1.105", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cuda-nvrtc-cu12", version = "12.1.105", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cuda-runtime-cu12", version = "12.1.105", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "nvidia-cudnn-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cufft-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-curand-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cusolver-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-cusparse-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-nccl-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "nvidia-nvtx-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cufft-cu12", version = "11.0.2.54", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-curand-cu12", version = "10.3.2.106", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusolver-cu12", version = "11.4.5.107", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusparse-cu12", version = "12.1.0.106", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-nccl-cu12", version = "2.20.5", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-nvtx-cu12", version = "12.1.105", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "sympy", version = "1.13.3", source = { registry = "https://pypi.org/simple" }, marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
-    { name = "triton", marker = "(python_full_version < '3.13' and platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "triton", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.13' and platform_machine == 'x86_64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "typing-extensions", marker = "(extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124')" },
 ]
 wheels = [
@@ -3380,8 +3620,8 @@ wheels = [
 
 [[package]]
 name = "torch"
-version = "2.7.0.dev20250221+cu128"
-source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }
+version = "2.6.0+cu124"
+source = { registry = "https://download.pytorch.org/whl/cu124" }
 resolution-markers = [
     "python_full_version >= '3.13' and platform_machine == 'x86_64' and sys_platform == 'darwin'",
     "python_full_version >= '3.13' and platform_machine != 'x86_64' and sys_platform == 'darwin'",
@@ -3405,26 +3645,34 @@ dependencies = [
     { name = "fsspec", marker = "extra == 'extra-13-docling-serve-cu124'" },
     { name = "jinja2", marker = "extra == 'extra-13-docling-serve-cu124'" },
     { name = "networkx", marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "nvidia-cublas-cu12", version = "12.4.5.8", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cuda-cupti-cu12", version = "12.4.127", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cuda-nvrtc-cu12", version = "12.4.127", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cuda-runtime-cu12", version = "12.4.127", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cudnn-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cufft-cu12", version = "11.2.1.3", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-curand-cu12", version = "10.3.5.147", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusolver-cu12", version = "11.6.1.9", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusparse-cu12", version = "12.3.1.170", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-cusparselt-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-nccl-cu12", version = "2.21.5", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
+    { name = "nvidia-nvtx-cu12", version = "12.4.127", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "setuptools", marker = "(python_full_version >= '3.12' and extra == 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
-    { name = "sympy", version = "1.13.3", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "sympy", version = "1.13.1", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "triton", version = "3.2.0", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'extra-13-docling-serve-cu124') or (platform_machine != 'x86_64' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124') or (sys_platform != 'linux' and extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
     { name = "typing-extensions", marker = "extra == 'extra-13-docling-serve-cu124'" },
 ]
 wheels = [
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp310-cp310-linux_aarch64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp310-cp310-manylinux_2_28_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp310-cp310-win_amd64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp311-cp311-linux_aarch64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp311-cp311-win_amd64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp312-cp312-linux_aarch64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp312-cp312-win_amd64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp313-cp313-linux_aarch64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp313-cp313-manylinux_2_28_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp313-cp313-win_amd64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp313-cp313t-linux_aarch64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp313-cp313t-manylinux_2_28_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torch-2.7.0.dev20250221%2Bcu128-cp313-cp313t-win_amd64.whl" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp310-cp310-linux_x86_64.whl", hash = "sha256:7f2ba7f7c0459320a521696f6b5bccc187f59890b23c9dfb6c49b0b87c6bfc97" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp310-cp310-win_amd64.whl", hash = "sha256:7cc45c5b39d74875cfafe908b7f55c544147cc16b01e795feb2fe766583efe78" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp311-cp311-linux_x86_64.whl", hash = "sha256:d4c3e9a8d31a7c0fcbb9da17c31a1917e1fac26c566a4cfbd8c9568ad7cade79" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp311-cp311-win_amd64.whl", hash = "sha256:6a1fb2714e9323f11edb6e8abf7aad5f79e45ad25c081cde87681a18d99c29eb" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp312-cp312-linux_x86_64.whl", hash = "sha256:a393b506844035c0dac2f30ea8478c343b8e95a429f06f3b3cadfc7f53adb597" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp312-cp312-win_amd64.whl", hash = "sha256:3313061c1fec4c7310cf47944e84513dcd27b6173b72a349bb7ca68d0ee6e9c0" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp313-cp313-linux_x86_64.whl", hash = "sha256:0f3bc53c988ce9568cd876a2a5316761e84a8704135ec8068f5f81b4417979cb" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp313-cp313-win_amd64.whl", hash = "sha256:519330eef09534acad8110b6f423d2fe58c1d8e9ada999ed077a637a0021f908" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.6.0%2Bcu124-cp313-cp313t-linux_x86_64.whl", hash = "sha256:35cba404c0d742406cdcba1609085874bc60facdfbc50e910c47a92405fef44c" },
 ]
 
 [[package]]
@@ -3532,8 +3780,8 @@ wheels = [
 
 [[package]]
 name = "torchvision"
-version = "0.22.0.dev20250221+cu128"
-source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }
+version = "0.21.0+cu124"
+source = { registry = "https://download.pytorch.org/whl/cu124" }
 resolution-markers = [
     "python_full_version >= '3.13' and platform_machine == 'x86_64' and sys_platform == 'darwin'",
     "python_full_version >= '3.13' and platform_machine != 'x86_64' and sys_platform == 'darwin'",
@@ -3555,14 +3803,17 @@ resolution-markers = [
 dependencies = [
     { name = "numpy", marker = "extra == 'extra-13-docling-serve-cu124'" },
     { name = "pillow", marker = "extra == 'extra-13-docling-serve-cu124'" },
-    { name = "torch", version = "2.7.0.dev20250221+cu128", source = { registry = "https://download.pytorch.org/whl/nightly/cu128" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
+    { name = "torch", version = "2.6.0+cu124", source = { registry = "https://download.pytorch.org/whl/cu124" }, marker = "extra == 'extra-13-docling-serve-cu124'" },
 ]
 wheels = [
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250221%2Bcu128-cp310-cp310-linux_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250221%2Bcu128-cp311-cp311-linux_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250221%2Bcu128-cp312-cp312-linux_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250221%2Bcu128-cp313-cp313-linux_x86_64.whl" },
-    { url = "https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250221%2Bcu128-cp313-cp313t-linux_x86_64.whl" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp310-cp310-linux_x86_64.whl", hash = "sha256:3d3e74018eaa7837c73e3764dad3b7792b7544401c25a42977e9744303731bd3" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp310-cp310-win_amd64.whl", hash = "sha256:0c6aefb70ab2b312065240c804e459ac7b0e449867afd469b38d2fd47f9391a7" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp311-cp311-linux_x86_64.whl", hash = "sha256:137376805aca5ba57bd2c7a3ecb8569df961dbe82b128aac9b3b0a7125ef9385" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp311-cp311-win_amd64.whl", hash = "sha256:000a013584ad2304ab30496318145f284ac364622addb5ee3a5abd2769ba146f" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp312-cp312-linux_x86_64.whl", hash = "sha256:efb53ea0af7bf09b7b53e2a18b9be6d245f7d46a90b51d5cf97f37e9b929a991" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp312-cp312-win_amd64.whl", hash = "sha256:ec63c2ee792757492da40590e34b14f2fceda29050558c215f0c1f3b08149c0f" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp313-cp313-linux_x86_64.whl", hash = "sha256:4b70acf3b4b96a0ceb1374116626c9bef9e8be016b57b1284e482260ca1896d6" },
+    { url = "https://download.pytorch.org/whl/cu124/torchvision-0.21.0%2Bcu124-cp313-cp313-win_amd64.whl", hash = "sha256:8fcf55321b206de70ff8e01c884fa42e57a60b1cb749341b96e0f22c8a7c9ec7" },
 ]
 
 [[package]]
@@ -3602,6 +3853,11 @@ wheels = [
 name = "triton"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
 dependencies = [
     { name = "filelock", marker = "(python_full_version < '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (python_full_version < '3.13' and sys_platform != 'darwin' and sys_platform != 'linux' and extra != 'extra-13-docling-serve-cpu' and extra != 'extra-13-docling-serve-cu124') or (extra == 'extra-13-docling-serve-cpu' and extra == 'extra-13-docling-serve-cu124')" },
 ]
@@ -3609,6 +3865,23 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/45/27/14cc3101409b9b4b9241d2ba7deaa93535a217a211c86c4cc7151fb12181/triton-3.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:e1efef76935b2febc365bfadf74bcb65a6f959a9872e5bddf44cc9e0adce1e1a", size = 209376304 },
     { url = "https://files.pythonhosted.org/packages/33/3e/a2f59384587eff6aeb7d37b6780de7fedd2214935e27520430ca9f5b7975/triton-3.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:5ce8520437c602fb633f1324cc3871c47bee3b67acf9756c1a66309b60e3216c", size = 209438883 },
     { url = "https://files.pythonhosted.org/packages/fe/7b/7757205dee3628f75e7991021d15cd1bd0c9b044ca9affe99b50879fc0e1/triton-3.0.0-1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:34e509deb77f1c067d8640725ef00c5cbfcb2052a1a3cb6a6d343841f92624eb", size = 209464695 },
+]
+
+[[package]]
+name = "triton"
+version = "3.2.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.13' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version >= '3.13' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.12.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.12.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version == '3.11.*' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version == '3.11.*' and sys_platform != 'darwin' and sys_platform != 'linux')",
+    "(python_full_version < '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux') or (python_full_version < '3.11' and sys_platform != 'darwin' and sys_platform != 'linux')",
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/01/65/3ffa90e158a2c82f0716eee8d26a725d241549b7d7aaf7e4f44ac03ebd89/triton-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b3e54983cd51875855da7c68ec05c05cf8bb08df361b1d5b69e05e40b0c9bd62", size = 253090354 },
+    { url = "https://files.pythonhosted.org/packages/a7/2e/757d2280d4fefe7d33af7615124e7e298ae7b8e3bc4446cdb8e88b0f9bab/triton-3.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8009a1fb093ee8546495e96731336a33fb8856a38e45bb4ab6affd6dbc3ba220", size = 253157636 },
+    { url = "https://files.pythonhosted.org/packages/06/00/59500052cb1cf8cf5316be93598946bc451f14072c6ff256904428eaf03c/triton-3.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8d9b215efc1c26fa7eefb9a157915c92d52e000d2bf83e5f69704047e63f125c", size = 253159365 },
+    { url = "https://files.pythonhosted.org/packages/c7/30/37a3384d1e2e9320331baca41e835e90a3767303642c7a80d4510152cbcf/triton-3.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e5dfa23ba84541d7c0a531dfce76d8bcd19159d50a4a8b14ad01e91734a5c1b0", size = 253154278 },
 ]
 
 [[package]]
