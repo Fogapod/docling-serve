@@ -26,15 +26,15 @@ md-lint-file:
 
 .PHONY: docling-serve-cpu-image
 docling-serve-cpu-image: Containerfile ## Build docling-serve "cpu only" container image
-	$(ECHO_PREFIX) printf "  %-12s Containerfile\n" "[docling-serve CPU ONLY]"
-	$(CMD_PREFIX) docker build --build-arg CPU_ONLY=true -f Containerfile --platform linux/amd64 -t ghcr.io/ds4sd/docling-serve-cpu:$(TAG) .
+	$(ECHO_PREFIX) printf "  %-12s Containerfile\n" "[docling-serve CPU]"
+	$(CMD_PREFIX) docker build --load --build-arg "UV_SYNC_EXTRA_ARGS=--no-extra cu124" -f Containerfile -t ghcr.io/ds4sd/docling-serve-cpu:$(TAG) .
 	$(CMD_PREFIX) docker tag ghcr.io/ds4sd/docling-serve-cpu:$(TAG) ghcr.io/ds4sd/docling-serve-cpu:main
 	$(CMD_PREFIX) docker tag ghcr.io/ds4sd/docling-serve-cpu:$(TAG) quay.io/ds4sd/docling-serve-cpu:main
 
 .PHONY: docling-serve-gpu-image
 docling-serve-gpu-image: Containerfile ## Build docling-serve container image with GPU support
 	$(ECHO_PREFIX) printf "  %-12s Containerfile\n" "[docling-serve with GPU]"
-	$(CMD_PREFIX) docker build --build-arg CPU_ONLY=false -f Containerfile --platform linux/amd64 -t ghcr.io/ds4sd/docling-serve:$(TAG) .
+	$(CMD_PREFIX) docker build --load --build-arg "UV_SYNC_EXTRA_ARGS=--no-extra cpu" -f Containerfile --platform linux/amd64 -t ghcr.io/ds4sd/docling-serve:$(TAG) .
 	$(CMD_PREFIX) docker tag ghcr.io/ds4sd/docling-serve:$(TAG) ghcr.io/ds4sd/docling-serve:main
 	$(CMD_PREFIX) docker tag ghcr.io/ds4sd/docling-serve:$(TAG) quay.io/ds4sd/docling-serve:main
 
@@ -65,13 +65,12 @@ md-lint: .md-lint ##      Lint markdown files
 .PHONY: py-Lint
 py-lint: ##      Lint Python files
 	$(ECHO_PREFIX) printf "  %-12s ./...\n" "[PY LINT]"
-	$(CMD_PREFIX) if ! which poetry $(PIPE_DEV_NULL) ; then \
-		echo "Please install poetry." ; \
-		echo "pip install poetry" ; \
+	$(CMD_PREFIX) if ! which uv $(PIPE_DEV_NULL) ; then \
+		echo "Please install uv." ; \
 		exit 1 ; \
 	fi
-	$(CMD_PREFIX) poetry install --all-extras
-	$(CMD_PREFIX) poetry run pre-commit run --all-files
+	$(CMD_PREFIX) uv sync --extra ui
+	$(CMD_PREFIX) uv run pre-commit run --all-files
 
 .PHONY: run-docling-cpu
 run-docling-cpu: ## Run the docling-serve container with CPU support and assign a container name
