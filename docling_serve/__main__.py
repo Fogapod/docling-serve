@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 def version_callback(value: bool) -> None:
     if value:
-        docling_serve_version = importlib.metadata.version("docling_serve")
+        docling_serve_version = importlib.metadata.version("docling_serv")
         docling_version = importlib.metadata.version("docling")
         docling_core_version = importlib.metadata.version("docling-core")
         docling_ibm_models_version = importlib.metadata.version("docling-ibm-models")
