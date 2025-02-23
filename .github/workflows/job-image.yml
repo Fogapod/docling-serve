@@ -127,7 +127,3 @@ jobs:
           cache-to: type=gha,mode=max
           file: Containerfile
           build-args: ${{ inputs.build_args }}
-
-      - name: Remove Local Docker Images
-        run: |
-          docker image prune -af
