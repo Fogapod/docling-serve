@@ -30,7 +30,7 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "docling~=2.23",
+    "docling~=2.25.1",
     "fastapi[standard]~=0.115",
     "httpx~=0.28",
     "pydantic~=2.10",
@@ -56,8 +56,8 @@ cpu = [
   "torchvision>=0.21.0",
 ]
 cu124 = [
-  "torch>=2.6.0",
-  "torchvision>=0.21.0",
+  "torch==2.5.1",
+  "torchvision==0.20.1",
 ]
 
 [dependency-groups]
