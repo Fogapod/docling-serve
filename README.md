@@ -104,7 +104,7 @@ curl -X 'POST' \
     "return_as_file": false,
     "do_table_structure": true,
     "include_images": true,
-    "images_scale": 2,
+    "images_scale": 2
   },
   "http_sources": [{"url": "https://arxiv.org/pdf/2206.01062"}]
 }'
@@ -276,6 +276,17 @@ The response can be a JSON Document or a File.
 - If you set the parameter `return_as_file` to True, the response will be a zip file.
 - If multiple files are generated (multiple inputs, or one input but multiple outputs with `return_as_file` True), the response will be a zip file.
 
+## Run docling-serve
+
+Clone the repository and run the following from within the cloned directory root.
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install "docling-serve[ui]"
+docling-serve run --enable-ui
+```
+
 ## Helpers
 
 - A full Swagger UI is available at the `/docs` endpoint.
@@ -323,7 +334,7 @@ uv sync --extra ui --extra rapidocr
 uv sync --extra tesserocr
 ```
 
-See `[project.optional-dependencies]` section in `pyproject.toml` for full list of options.
+See `[project.optional-dependencies]` section in `pyproject.toml` for full list of options and runtime options with `uv run docling-serve --help`.
 
 ### Run the server
 

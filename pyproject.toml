@@ -1,6 +1,6 @@
 [project]
 name = "docling-serve"
-version = "0.3.0"  # DO NOT EDIT, updated automatically
+version = "0.5.0"  # DO NOT EDIT, updated automatically
 description = "Running Docling as a service"
 license = {text = "MIT"}
 authors = [
@@ -30,7 +30,7 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "docling~=2.23",
+    "docling~=2.25.1",
     "fastapi[standard]~=0.115",
     "httpx~=0.28",
     "pydantic~=2.10",
@@ -38,6 +38,7 @@ dependencies = [
     "python-multipart>=0.0.14,<0.1.0",
     "typer~=0.12",
     "uvicorn[standard]>=0.29.0,<1.0.0",
+    "websockets~=14.0",
 ]
 
 [project.optional-dependencies]
@@ -63,7 +64,7 @@ cu124 = [
 [dependency-groups]
 dev = [
     "mypy~=1.11",
-    "pre-commit~=3.8",
+    "pre-commit-uv~=4.1",
     "pytest~=8.3",
     "pytest-asyncio~=0.24",
     "pytest-check~=2.4",
@@ -101,7 +102,8 @@ url = "https://download.pytorch.org/whl/cu124"
 explicit = true
 
 [tool.setuptools.packages.find]
-include = ["docling_serve"]
+include = ["docling_serve*"]
+namespaces = true
 
 [project.scripts]
 docling-serve = "docling_serve.__main__:main"
@@ -144,7 +146,8 @@ select = [
     "S307", # eval
     # "T20",  # (disallow print statements) keep debugging statements out of the codebase
     "W",  # pycodestyle warnings
-    "ASYNC" # async
+    "ASYNC", # async
+    "UP", # pyupgrade
 ]
 
 ignore = [
@@ -153,6 +156,7 @@ ignore = [
     "F811", # "redefinition of the same function"
     "PL", # Pylint
     "RUF012", # Mutable Class Attributes
+    "UP007", # Option and Union
 ]
 
 #extend-select = []
@@ -164,9 +168,19 @@ ignore = [
 [tool.ruff.lint.mccabe]
 max-complexity = 15
 
+[tool.ruff.lint.isort.sections]
+"docling" = ["docling", "docling_core"]
+
 [tool.ruff.lint.isort]
 combine-as-imports = true
-known-third-party = ["docling", "docling_core"]
+section-order = [
+  "future",
+  "standard-library",
+  "third-party",
+  "docling",
+  "first-party",
+  "local-folder",
+]
 
 [tool.mypy]
 pretty = true
@@ -180,10 +194,6 @@ module = [
     "easyocr.*",
     "tesserocr.*",
     "rapidocr_onnxruntime.*",
-    "docling_conversion.*",
-    "gradio_ui.*",
-    "response_preparation.*",
-    "helper_functions.*",
     "requests.*",
 ]
 ignore_missing_imports = true
